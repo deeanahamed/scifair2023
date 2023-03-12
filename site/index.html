@@ -484,8 +484,19 @@
     }
 
     function setAnswer(result) {
+      saveData(
+        {
+          "result": result,
+          "ageGroup": ageGroup,
+          "answer": answer,
+          "textType": textType
+        }
+      );
+
       if (result === 0) {
         document.getElementById("img").src = images.checkmark;
+        document.getElementById("resultHeader").innerText = "Correct!"
+        document.getElementById("resultText").innerText = ""
       } else {
         document.getElementById("img").src = images.x;
       }

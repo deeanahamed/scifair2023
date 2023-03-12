@@ -890,8 +890,17 @@
 </head>
 
 <body>
-  <p id="text"></p>
-
+  <div id="ageSelect">
+    <button onclick="setAgeGroup(0)"></button>
+    <button onclick="setAgeGroup(1)"></button>
+    <button onclick="setAgeGroup(2)"></button>
+    <button onclick="setAgeGroup(3)"></button>
+    <button onclick="setAgeGroup(4)"></button>
+  </div>
+  <div id="text">
+    <p id="textContent"></p>
+  </div>
+  <div id="result"></div>
   <footer>
     <p>
       Programmed by Deean Ahamed
@@ -915,7 +924,8 @@
       ]
     }
 
-    var ageGroup = parseInt(prompt("Enter age group (0 to 4)"));
+    var ageGroup;
+
     var textType;
 
     var i = Math.floor(Math.random() * 2);
@@ -927,7 +937,7 @@
 
     var textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
 
-    document.getElementById("text").innerText = texts[textType][ageGroup][textNum];
+    document.getElementById("textContent").innerText = texts[textType][ageGroup][textNum];
   </script>
 </body>
 

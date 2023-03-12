@@ -890,21 +890,26 @@
 </head>
 
 <body>
-  <div id="ageSelect">
-    <button onclick="setAgeGroup(0)">Age Group 0</button>
-    <br />
-    <button onclick="setAgeGroup(1)">Age Group 1</button>
-    <br />
-    <button onclick="setAgeGroup(2)">Age Group 2</button>
-    <br />
-    <button onclick="setAgeGroup(3)">Age Group 3</button>
-    <br />
-    <button onclick="setAgeGroup(4)">Age Group 4</button>
-  </div>
-  <div id="text">
-    <p id="textContent"></p>
-  </div>
-  <div id="result"></div>
+  <header>
+    <p id="info"></p>
+  </header>
+  <main>
+    <div id="ageSelect">
+      <button onclick="setAgeGroup(0)">Age Group 0</button>
+      <br />
+      <button onclick="setAgeGroup(1)">Age Group 1</button>
+      <br />
+      <button onclick="setAgeGroup(2)">Age Group 2</button>
+      <br />
+      <button onclick="setAgeGroup(3)">Age Group 3</button>
+      <br />
+      <button onclick="setAgeGroup(4)">Age Group 4</button>
+    </div>
+    <div id="text">
+      <p id="textContent"></p>
+    </div>
+    <div id="result"></div>
+  </main>
   <footer>
     <p>
       Programmed by Deean Ahamed
@@ -933,6 +938,7 @@
     document.getElementById("ageSelect").style.display = "block";
     document.getElementById("text").style.display = "none";
     document.getElementById("result").style.display = "none";
+    document.getElementById("info").innerText = "Please select your age group."
 
     function setAgeGroup(age) {
       ageGroup = age;
@@ -940,6 +946,7 @@
       document.getElementById("ageSelect").style.display = "none";
       document.getElementById("text").style.display = "block";
       document.getElementById("result").style.display = "none";
+      document.getElementById("info").innerText = "Read through the text, then predict if it was written by an AI or a human."
     }
 
     function setText() {

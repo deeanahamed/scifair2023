@@ -549,9 +549,19 @@ Main HTML
       if (result === 0) {
         document.getElementById("img").src = images.checkmark;
         document.getElementById("resultHeader").innerText = "Correct!"
-        document.getElementById("resultText").innerText = ""
+	if (textType === "ai") {
+	  document.getElementById("resultText").innerText = "Great job! Just like you thought, the text was written by an AI!";
+	} else {
+	  document.getElementById("resultText").innerText = "Great job! Just like you thought, the text was written by a human!";
+	}
       } else {
         document.getElementById("img").src = images.x;
+	document.getElementById("resultHeader").innerText = "Wrong!"
+	if (textType === "ai") {
+	  document.getElementById("resultText").innerText = "Nope! The text was actually written by an AI!";
+	} else {
+	  document.getElementById("resultText").innerText = "Nope! The text was actually written by a human!";
+	}
       }
     }
   </script>

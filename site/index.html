@@ -938,6 +938,7 @@
     */
     var ageGroup;
     var textType;
+    var textNum;
     var texts = {
       ai: [
         [
@@ -1109,7 +1110,7 @@
       } else {
         textType = "human";
       };
-      var textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
+      textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
       document.getElementById("textContent").innerHTML = texts[textType][ageGroup][textNum][0];
     }
 

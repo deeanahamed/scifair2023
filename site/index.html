@@ -914,7 +914,7 @@
       <button onclick="setResponse('human')">Human</button>
     </div>
     <div id="result">
-      <img />
+      <img id="img" src="data:," alt="img" />
     </div>
   </main>
   <footer>
@@ -990,6 +990,14 @@
       document.getElementById("text").style.display = "none";
       document.getElementById("result").style.display = "block";
       document.getElementById("info").innerHtml = "Thank you for participating in this expirement! <br /> :D"
+    }
+
+    function setAnswer(result) {
+      if (result === 0) {
+        document.getElementById("img").src = images.checkmark;
+      } else {
+        document.getElementById("img").src = images.x;
+      }
     }
   </script>
 </body>

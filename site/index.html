@@ -891,6 +891,7 @@
 
 <body>
   <header>
+    <br />
     <p id="info"></p>
   </header>
   <main>
@@ -906,13 +907,17 @@
       <button onclick="setAgeGroup(4)">Age Group 4</button>
     </div>
     <div id="text">
+      <article>
       <p id="textContent"></p>
+      </article>
+      <button onclick="setResponse(0)">AI</button>
+      <button onclick="setResponse(1)">Human</button>
     </div>
     <div id="result"></div>
   </main>
   <footer>
     <p>
-      Programmed by Deean Ahamed
+      Programmed by Deean Ahamed & Ehan Ahamed
     </p>
   </footer>
   <script>
@@ -946,7 +951,7 @@
       document.getElementById("ageSelect").style.display = "none";
       document.getElementById("text").style.display = "block";
       document.getElementById("result").style.display = "none";
-      document.getElementById("info").innerText = "Read through the text, then predict if it was written by an AI or a human."
+      document.getElementById("info").innerText = "Read through the text, then predict if it was written by an AI or a human!"
     }
 
     function setText() {

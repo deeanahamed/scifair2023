@@ -891,11 +891,15 @@
 
 <body>
   <div id="ageSelect">
-    <button onclick="setAgeGroup(0)"></button>
-    <button onclick="setAgeGroup(1)"></button>
-    <button onclick="setAgeGroup(2)"></button>
-    <button onclick="setAgeGroup(3)"></button>
-    <button onclick="setAgeGroup(4)"></button>
+    <button onclick="setAgeGroup(0)">Age Group 0</button>
+    <br />
+    <button onclick="setAgeGroup(1)">Age Group 1</button>
+    <br />
+    <button onclick="setAgeGroup(2)">Age Group 2</button>
+    <br />
+    <button onclick="setAgeGroup(3)">Age Group 3</button>
+    <br />
+    <button onclick="setAgeGroup(4)">Age Group 4</button>
   </div>
   <div id="text">
     <p id="textContent"></p>
@@ -907,6 +911,8 @@
     </p>
   </footer>
   <script>
+    var ageGroup;
+    var textType;
     var texts = {
       ai: [
           ["Placeholder text for AI-generated, age group 0, text 0","Placeholder text for AI-generated, age group 0, text 1","Placeholder text for AI-generated, age group 0, text 2"],
@@ -922,24 +928,31 @@
         ["Placeholder text for hooman, age group 3, text 0","Placeholder text for hooman, age group 3, text 1","Placeholder text for hooman, age group 3, text 2"],
         ["Placeholder text for hooman, age group 4, text 0","Placeholder text for hooman, age group 4, text 1","Placeholder text for hooman, age group 4, text 2"],
       ]
-    }
-
-    var ageGroup;
-
-    var textType;
-
-    var i = Math.floor(Math.random() * 2);
-    if (i === 0) {
-      textType = "ai";
-    } else {
-      textType = "human";
     };
 
-    var textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
+    document.getElementById("ageSelect").style.display = "block";
+    document.getElementById("text").style.display = "none";
+    document.getElementById("result").style.display = "none";
 
-    document.getElementById("textContent").innerText = texts[textType][ageGroup][textNum];
+    function setAgeGroup(age) {
+      ageGroup = age;
+      setText();
+      document.getElementById("ageSelect").style.display = "none";
+      document.getElementById("text").style.display = "block";
+      document.getElementById("result").style.display = "none";
+    }
+
+    function setText() {
+      var i = Math.floor(Math.random() * 2);
+      if (i === 0) {
+        textType = "ai";
+      } else {
+        textType = "human";
+      };
+      var textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
+      document.getElementById("textContent").innerText = texts[textType][ageGroup][textNum];
+    }
   </script>
 </body>
 
 </html>
-

@@ -262,8 +262,11 @@
       width: 20% !important;
     }
     #img {
-      width: 120px !important;
-      height: 120px !important;
+      width: 100px !important;
+      height: 100px !important;
+    }
+    .smiley {
+      color: var(--accent) !important;
     }
   </style>
 </head>
@@ -531,7 +534,7 @@ Main HTML
       document.getElementById("text").style.display = "none";
       document.getElementById("result").style.display = "block";
 
-      document.getElementById("info").innerHTML = "Thank you for participating in this expirement! <br /> :D"
+      document.getElementById("info").innerHTML = "Thank you for participating in this expirement! <br /> <b class='smiley'> :D </b>";
 
       document.getElementById("textInfo").innerHTML = texts[textType][ageGroup][textNum][1];
     }
@@ -556,7 +559,7 @@ Main HTML
 	}
       } else {
         document.getElementById("img").src = images.x;
-	document.getElementById("resultHeader").innerText = "Wrong!"
+	document.getElementById("resultHeader").innerText = "Incorrect!"
 	if (textType === "ai") {
 	  document.getElementById("resultText").innerText = "Nope! The text was actually written by an AI!";
 	} else {

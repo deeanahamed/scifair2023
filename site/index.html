@@ -915,6 +915,9 @@
     </div>
     <div id="result">
       <img id="img" src="data:," alt="img" />
+      <h2 id="resultHeader"></h2>
+      <p id="resultText"></p>
+      <p id="textInfo"></p>
     </div>
   </main>
   <footer>
@@ -1107,7 +1110,7 @@
         textType = "human";
       };
       var textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
-      document.getElementById("textContent").innerText = texts[textType][ageGroup][textNum][1];
+      document.getElementById("textContent").innerHTML = texts[textType][ageGroup][textNum][0];
     }
 
     function setResponse(answer) {
@@ -1120,6 +1123,8 @@
       document.getElementById("text").style.display = "none";
       document.getElementById("result").style.display = "block";
       document.getElementById("info").innerHTML = "Thank you for participating in this expirement! <br /> :D"
+
+      document.getElementById("textInfo").innerHTML = texts[textType][ageGroup][textNum][1];
     }
 
     function setAnswer(result) {

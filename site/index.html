@@ -937,18 +937,148 @@
     var textType;
     var texts = {
       ai: [
-          ["Placeholder text for AI-generated, age group 0, text 0","Placeholder text for AI-generated, age group 0, text 1","Placeholder text for AI-generated, age group 0, text 2"],
-          ["Placeholder text for AI-generated, age group 1, text 0","Placeholder text for AI-generated, age group 1, text 1","Placeholder text for AI-generated, age group 1, text 2"],
-          ["Placeholder text for AI-generated, age group 2, text 0","Placeholder text for AI-generated, age group 2, text 1","Placeholder text for AI-generated, age group 2, text 2"],
-          ["Placeholder text for AI-generated, age group 3, text 0","Placeholder text for AI-generated, age group 3, text 1","Placeholder text for AI-generated, age group 3, text 2"],
-          ["Placeholder text for AI-generated, age group 4, text 0","Placeholder text for AI-generated, age group 4, text 1","Placeholder text for AI-generated, age group 4, text 2"],
+        [
+          [
+            "Placeholder text for AI-generated, age group 0, text 0",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 0, text 1",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 0, text 2",
+            "it works"
+          ]
+        ],
+        [
+          [
+            "Placeholder text for AI-generated, age group 1, text 0",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 1, text 1",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 1, text 2",
+            "it works"
+          ]
+        ],
+        [
+          [
+            "Placeholder text for AI-generated, age group 2, text 0",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 2, text 1",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 2, text 2",
+            "it works"
+          ]
+        ],
+        [
+          [
+            "Placeholder text for AI-generated, age group 3, text 0",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 3, text 1",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 3, text 2",
+            "it works"
+          ]
+        ],
+        [
+          [
+            "Placeholder text for AI-generated, age group 4, text 0",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 4, text 1",
+            "it works"
+          ],
+          [
+            "Placeholder text for AI-generated, age group 4, text 2",
+            "it works"
+          ]
+        ]
       ],
       human: [
-        ["Placeholder text for hooman, age group 0, text 0","Placeholder text for hooman, age group 0, text 1","Placeholder text for hooman, age group 0, text 2"],
-        ["Placeholder text for hooman, age group 1, text 0","Placeholder text for hooman, age group 1, text 1","Placeholder text for hooman, age group 1, text 2"],
-        ["Placeholder text for hooman, age group 2, text 0","Placeholder text for hooman, age group 2, text 1","Placeholder text for hooman, age group 2, text 2"],
-        ["Placeholder text for hooman, age group 3, text 0","Placeholder text for hooman, age group 3, text 1","Placeholder text for hooman, age group 3, text 2"],
-        ["Placeholder text for hooman, age group 4, text 0","Placeholder text for hooman, age group 4, text 1","Placeholder text for hooman, age group 4, text 2"],
+        [
+           [
+             "Placeholder text for human written, age group 0, text 0",
+             "it works"
+           ],
+            [
+              "Placeholder text for human written, age group 0, text 1",
+              "it works"
+            ],
+            [
+              "Placeholder text for human written, age group 0, text 2",
+              "it works"
+           ]
+        ],
+        [
+           [
+             "Placeholder text for human written, age group 1, text 0",
+             "it works"
+           ],
+            [
+              "Placeholder text for human written, age group 1, text 1",
+              "it works"
+            ],
+            [
+              "Placeholder text for human written, age group 1, text 2",
+              "it works"
+           ]
+        ],
+        [
+           [
+             "Placeholder text for human written, age group 2, text 0",
+             "it works"
+           ],
+            [
+              "Placeholder text for human written, age group 2, text 1",
+              "it works"
+            ],
+            [
+              "Placeholder text for human written, age group 2, text 2",
+              "it works"
+           ]
+        ],
+        [
+           [
+             "Placeholder text for human written, age group 3, text 0",
+             "it works"
+           ],
+            [
+              "Placeholder text for human written, age group 3, text 1",
+              "it works"
+            ],
+            [
+              "Placeholder text for human written, age group 3, text 2",
+              "it works"
+           ]
+        ],
+        [
+           [
+             "Placeholder text for human written, age group 4, text 0",
+             "it works"
+           ],
+            [
+              "Placeholder text for human written, age group 4, text 1",
+              "it works"
+            ],
+            [
+              "Placeholder text for human written, age group 4, text 2",
+              "it works"
+           ]
+        ]
       ]
     };
 
@@ -977,7 +1107,7 @@
         textType = "human";
       };
       var textNum = Math.floor(Math.random() * texts[textType][ageGroup].length);
-      document.getElementById("textContent").innerText = texts[textType][ageGroup][textNum];
+      document.getElementById("textContent").innerText = texts[textType][ageGroup][textNum][1];
     }
 
     function setResponse(answer) {

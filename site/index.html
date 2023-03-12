@@ -264,15 +264,15 @@ Main HTML
   </header>
   <main>
     <div id="ageSelect">
-      <button onclick="setAgeGroup(0)">Age Group 0</button>
+      <button onclick="setAgeGroup(0)">Elementary</button>
       <br />
-      <button onclick="setAgeGroup(1)">Age Group 1</button>
+      <button onclick="setAgeGroup(1)">Middle</button>
       <br />
-      <button onclick="setAgeGroup(2)">Age Group 2</button>
+      <button onclick="setAgeGroup(2)">High</button>
       <br />
-      <button onclick="setAgeGroup(3)">Age Group 3</button>
+      <button onclick="setAgeGroup(3)">Adults</button>
       <br />
-      <button onclick="setAgeGroup(4)">Age Group 4</button>
+      <button onclick="setAgeGroup(4)">Seniors</button>
     </div>
     <div id="text">
       <article>
@@ -510,6 +510,7 @@ Main HTML
       document.getElementById("ageSelect").style.display = "none";
       document.getElementById("text").style.display = "none";
       document.getElementById("result").style.display = "block";
+
       document.getElementById("info").innerHTML = "Thank you for participating in this expirement! <br /> :D"
 
       document.getElementById("textInfo").innerHTML = texts[textType][ageGroup][textNum][1];
@@ -532,6 +533,15 @@ Main HTML
       } else {
         document.getElementById("img").src = images.x;
       }
+    }
+  </script>
+  
+  <!--
+  Data collection JavaScript
+  -->
+  <script>
+    function saveData(data) {
+      //localStorage.setItem
     }
   </script>
 

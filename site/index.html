@@ -667,6 +667,8 @@ Main HTML
     }
 
     function calcData() {
+      document.getElementById("dataRaw").innerText = localStorage.getItem("data");
+
       var calcSavedData = JSON.parse(localStorage.getItem("data"));
 
       var calcDataTotal = calcSavedData.length;

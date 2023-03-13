@@ -324,27 +324,28 @@ Main HTML
       <p id="dataTotal"></p>
       <p id="dataCorrect"></p>
       <p id="dataIncorrect"></p>
-      <p>Group 0 (Elementary) data</p>
+      <h3>Group 0 (Elementary) data</h3>
       <p id="data0Total"></p>
       <p id="data0Correct"></p>
       <p id="data0Incorrect"></p>
-      <p>Group 1 (Middle) data</p>
+      <h3>Group 1 (Middle) data</h3>
       <p id="data1Total"></p>
       <p id="data1Correct"></p>
       <p id="data1Incorrect"></p>
-      <p>Group 2 (High) data</p>
+      <h3>Group 2 (High) data</h3>
       <p id="data2Total"></p>
       <p id="data2Correct"></p>
       <p id="data2Incorrect"></p>
-      <p>Group 3 (Adults) data</p>
+      <h3>Group 3 (Adults) data</h3>
       <p id="data3Total"></p>
       <p id="data3Correct"></p>
       <p id="data3Incorrect"></p>
-      <p>Group 4 (Seniors) data</p>
+      <h3>Group 4 (Seniors) data</h3>
       <p id="data4Total"></p>
       <p id="data4Correct"></p>
       <p id="data4Incorrect"></p>
-      <p>Raw data</p>
+      <h3>Raw data</h3>
+      <p id="dataRaw"></p>
     </div>
   </main>
   <footer>
@@ -654,6 +655,11 @@ Main HTML
     function showData() {
       calcData();
       document.getElementById("data").style.display = "block";
+
+      document.getElementById("ageSelect").style.display = "none";
+      document.getElementById("text").style.display = "none";
+      document.getElementById("result").style.display = "none";
+      document.getElementById("info").innerText = "Refresh to go back! <br /> <b class='smiley'> :D </b>"
     }
 
     function calcData() {
@@ -704,13 +710,29 @@ Main HTML
           "incorrect": 0,
           "correct": 0
         },
-      ]
+      ];
+
       for (var i2 = 0; i2 < calcSavedData.length; i2++) {
         calcDataSortAge[calcSavedData[i2].ageGroup].total++
         calcDataSortAge[calcSavedData[i2].ageGroup].incorrect += calcSavedData[i2].value;
       }
+
       for (var i3 = 0; i3 < calcDataSortAge.length; i3++) {
         calcDataSortAge[i3].correct = calcDataSortAge[i3].total - calcDataSortAge[i3].incorrect;
+      }
+
+      for (var i4 = 0; i4 < calcDataSortAge.length; i4++) {
+        document.getElementById(
+          "data" + i4.toString() + "Total"
+        ).innerText = i4.toString + " Total: " + calcDataSortAge[i4].total.toString();
+
+        document.getElementById(
+          "data" + i4.toString() + "Correct"
+        ).innerText = i4.toString + " Correct: " + calcDataSortAge[i4].correct.toString();
+
+        document.getElementById(
+          "data" + i4.toString() "Incorrect"
+        ).innerText = i4.toString + " Incorrect: " + calcDataSortAge[i4].incorrect.toString();      
       }
     }
   </script>

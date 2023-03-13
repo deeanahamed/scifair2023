@@ -590,11 +590,12 @@ Main HTML
   <script>
     function saveData(data) {
       if (localStorage.getItem("data")) {
-        var oldData = JSON.parse(localStorage.getItem("data"));
-        var newData = oldData.push(data);
-        localStorage.setItem("data", JSON.stringify(newData));
+        var savedData = JSON.parse(localStorage.getItem("data"));
+        savedData.push(data);
+        localStorage.setItem("data", JSON.stringify(savedData));
       } else {
-        localStorage.setItem("data", JSON.stringify([]));
+        var newData = [data];
+        localStorage.setItem("data", JSON.stringify(newData));
       }
     }
   </script>

@@ -674,6 +674,44 @@ Main HTML
       document.getElementById("dataTotal").innerText = "Total: " + calcDataTotal.toString();
       document.getElementById("dataCorrect").innerText = "Total Correct: " + calcDataCorrect.toString();
       document.getElementById("dataIncorrect").innerText = "Total Incorrect: " + calcDataIncorrect.toString();
+
+      /*
+      sort per age group
+      */
+      var calcDataSortAge = [
+        {
+          "total": 0,
+          "incorrect": 0,
+          "correct": 0
+        },
+        {
+          "total": 0,
+          "incorrect": 0,
+          "correct": 0
+        },
+        {
+          "total": 0,
+          "incorrect": 0,
+          "correct": 0
+        },
+        {
+          "total": 0,
+          "incorrect": 0,
+          "correct": 0
+        },
+        {
+          "total": 0,
+          "incorrect": 0,
+          "correct": 0
+        },
+      ]
+      for (var i2 = 0; i2 < calcSavedData.length; i2++) {
+        calcDataSortAge[calcSavedData[i2].ageGroup].total++
+        calcDataSortAge[calcSavedData[i2].ageGroup].incorrect += calcSavedData[i2].value;
+      }
+      for (var i3 = 0; i3 < calcDataSortAge.length i3++) {
+        calcDataSortAge[i3].correct = calcDataSortAge[i3].total - calcDataSortAge[i3].incorrect;
+      }
     }
   </script>
 </body>

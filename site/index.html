@@ -279,6 +279,7 @@
 <!--
 Main HTML
 -->
+
 <body>
   <header>
     <br />
@@ -287,19 +288,19 @@ Main HTML
   <main>
     <div id="ageSelect">
       <div class="center">
-      	<button onclick="setAgeGroup(0)">Elementary</button>
+        <button onclick="setAgeGroup(0)">Elementary</button>
       </div>
       <div class="center">
-      	<button onclick="setAgeGroup(1)">Middle</button>
+        <button onclick="setAgeGroup(1)">Middle</button>
       </div>
       <div class="center">
-      	<button onclick="setAgeGroup(2)">High</button>
+        <button onclick="setAgeGroup(2)">High</button>
       </div>
       <div class="center">
-      	<button onclick="setAgeGroup(3)">Adults</button>
+        <button onclick="setAgeGroup(3)">Adults</button>
       </div>
       <div class="center">
-      	<button onclick="setAgeGroup(4)">Seniors</button>
+        <button onclick="setAgeGroup(4)">Seniors</button>
       </div>
     </div>
     <div id="text">
@@ -311,13 +312,18 @@ Main HTML
     </div>
     <div id="result">
       <div class="center">
-	<img id="img" src="data:," alt="img" />
+        <img id="img" src="data:," alt="img" />
       </div>
       <div class="center">
         <h2 id="resultHeader"></h2>
       </div>
       <p id="resultText"></p>
       <p id="textInfo"></p>
+    </div>
+    <div id="data">
+      <p id="dataCorrect"></p>
+      <p id="dataIncorrect"></p>
+      <p id="dataTotal"></p>
     </div>
   </main>
   <footer>
@@ -583,7 +589,13 @@ Main HTML
   -->
   <script>
     function saveData(data) {
-      //localStorage.setItem
+      if (localStorage.getItem("data")) {
+        var oldData = JSON.parse(localStorage.getItem("data"));
+        var newData = oldData.push(data);
+        localStorage.setItem("data", JSON.stringify(newData));
+      } else {
+        localStorage.setItem("data", JSON.stringify([]));
+      }
     }
   </script>
 

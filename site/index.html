@@ -273,8 +273,11 @@
     .smiley {
       color: var(--accent) !important;
     }
-    .fancyData {
+    .fancyDataSmall {
       width: 60%;
+    }
+    .fancyDataLarge {
+      width: 80%;
     }
   </style>
 </head>
@@ -328,8 +331,10 @@ Main HTML
     </div>
     <div id="data">
       <h2>Fancy Data</h2>
-      <div class="fancyData"><canvas id="fancyDataCorrect"></canvas></div>
-      <div class="fancyData"><canvas id="fancyDataSortAge"></canvas></div>
+      <div class="fancyDataLarge"><canvas id="fancyDataSortAge"></canvas></div>
+      <br />
+      <br />
+      <div class="fancyDataSmall"><canvas id="fancyDataCorrect"></canvas></div>
       <h2>Data</h2>
       <p id="dataTotal"></p>
       <p id="dataCorrect"></p>
@@ -769,47 +774,6 @@ Main HTML
       Chart.defaults.backgroundColor = '#1E1E32';
       Chart.defaults.borderColor = '#3D3D66';
       Chart.defaults.color = '#A3A3CC';
-      var fancyDataCorrect = new Chart(
-        document.getElementById("fancyDataCorrect"),
-        {
-          type: "pie",
-          data: {
-
-            labels: [
-              "Correct",
-              "Incorrect"
-            ],
-            datasets: [
-              {
-                label: "Count",
-                data: [
-                  calcDataCorrect,
-                  calcDataIncorrect
-                ],
-                backgroundColor: [
-                  "#52CCA3",
-                  "#FF6666"
-                ],
-                hoverBackgroundColor: [
-                  "#7ACCB1",
-                  "#FF9999"
-                ],
-                borderColor: [
-                  "#52CCA3",
-                  "#FF6666"
-                ],
-                hoverBorderColor: [
-                  "#7ACCB1",
-                  "#FF9999"
-                ],
-                hoverOffset: 0
-              }
-            ]
-
-          }
-          
-        }
-      );
       var fancyDataSortAge = new Chart(
         document.getElementById("fancyDataSortAge"),
         {
@@ -853,6 +817,47 @@ Main HTML
                 borderColor: "#FF6666",
                 hoverBorderColor: "#FF9999",
                 borderWidth: 1
+              }
+            ]
+
+          }
+          
+        }
+      );
+      var fancyDataCorrect = new Chart(
+        document.getElementById("fancyDataCorrect"),
+        {
+          type: "pie",
+          data: {
+
+            labels: [
+              "Correct",
+              "Incorrect"
+            ],
+            datasets: [
+              {
+                label: "Count",
+                data: [
+                  calcDataCorrect,
+                  calcDataIncorrect
+                ],
+                backgroundColor: [
+                  "#52CCA3",
+                  "#FF6666"
+                ],
+                hoverBackgroundColor: [
+                  "#7ACCB1",
+                  "#FF9999"
+                ],
+                borderColor: [
+                  "#52CCA3",
+                  "#FF6666"
+                ],
+                hoverBorderColor: [
+                  "#7ACCB1",
+                  "#FF9999"
+                ],
+                hoverOffset: 0
               }
             ]
 

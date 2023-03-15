@@ -274,12 +274,10 @@
       color: var(--accent) !important;
     }
     .fancyDataPie {
-      position: relative !important;
-      width: 40vh !important;
+      width: 40% !important;
     }
     .fancyDataBar {
-      position: relative !important;
-      width: 80vh !important;
+      width: 80% !important;
     }
   </style>
 </head>
@@ -786,12 +784,6 @@ Main HTML
         document.getElementById("fancyDataCorrect"),
         {
           type: "pie",
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 1,
-            resizeDelay: 1000
-          },
           data: {
 
             labels: [
@@ -833,12 +825,6 @@ Main HTML
         document.getElementById("fancyDataSortAge"),
         {
           type: "bar",
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 2,
-            resizeDelay: 1000
-          },
           data: {
 
             labels: [
@@ -889,12 +875,6 @@ Main HTML
         document.getElementById("fancyDataTotal"),
         {
           type: "bar",
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 2,
-            resizeDelay: 1000
-          },
           data: {
 
             labels: [

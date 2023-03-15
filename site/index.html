@@ -331,10 +331,13 @@ Main HTML
     </div>
     <div id="data">
       <h2>Fancy Data</h2>
+      <div class="fancyDataSmall"><canvas id="fancyDataCorrect"></canvas></div>
+      <br />
+      <br />
       <div class="fancyDataLarge"><canvas id="fancyDataSortAge"></canvas></div>
       <br />
       <br />
-      <div class="fancyDataSmall"><canvas id="fancyDataCorrect"></canvas></div>
+      <div class="fancyDataLarge"><canvas id="fancyDataTotal"></canvas></div>
       <h2>Data</h2>
       <p id="dataTotal"></p>
       <p id="dataCorrect"></p>
@@ -774,6 +777,47 @@ Main HTML
       Chart.defaults.backgroundColor = '#1E1E32';
       Chart.defaults.borderColor = '#3D3D66';
       Chart.defaults.color = '#A3A3CC';
+      var fancyDataCorrect = new Chart(
+        document.getElementById("fancyDataCorrect"),
+        {
+          type: "pie",
+          data: {
+
+            labels: [
+              "Correct",
+              "Incorrect"
+            ],
+            datasets: [
+              {
+                label: "Count",
+                data: [
+                  calcDataCorrect,
+                  calcDataIncorrect
+                ],
+                backgroundColor: [
+                  "#52CCA3",
+                  "#FF6666"
+                ],
+                hoverBackgroundColor: [
+                  "#7ACCB1",
+                  "#FF9999"
+                ],
+                borderColor: [
+                  "#52CCA3",
+                  "#FF6666"
+                ],
+                hoverBorderColor: [
+                  "#7ACCB1",
+                  "#FF9999"
+                ],
+                hoverOffset: 0
+              }
+            ]
+
+          }
+          
+        }
+      );
       var fancyDataSortAge = new Chart(
         document.getElementById("fancyDataSortAge"),
         {
@@ -824,40 +868,34 @@ Main HTML
           
         }
       );
-      var fancyDataCorrect = new Chart(
-        document.getElementById("fancyDataCorrect"),
+      var fancyDataTotal = new Chart(
+        document.getElementById("fancyDataTotal"),
         {
-          type: "pie",
+          type: "bar",
           data: {
 
             labels: [
-              "Correct",
-              "Incorrect"
+              "Elementary",
+              "Middle",
+              "High",
+              "Adults",
+              "Seniors"
             ],
             datasets: [
               {
                 label: "Count",
                 data: [
-                  calcDataCorrect,
-                  calcDataIncorrect
+                  calcDataSortAge[0].total,
+                  calcDataSortAge[1].total,
+                  calcDataSortAge[2].total,
+                  calcDataSortAge[3].total,
+                  calcDataSortAge[4].total
                 ],
-                backgroundColor: [
-                  "#52CCA3",
-                  "#FF6666"
-                ],
-                hoverBackgroundColor: [
-                  "#7ACCB1",
-                  "#FF9999"
-                ],
-                borderColor: [
-                  "#52CCA3",
-                  "#FF6666"
-                ],
-                hoverBorderColor: [
-                  "#7ACCB1",
-                  "#FF9999"
-                ],
-                hoverOffset: 0
+                backgroundColor: "#7A52CC",
+                hoverBackgroundColor: "#967ACC",
+                borderColor: "#7A52CC",
+                hoverBorderColor: "#967ACC",
+                borderWidth: 1
               }
             ]
 

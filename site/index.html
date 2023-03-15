@@ -273,11 +273,13 @@
     .smiley {
       color: var(--accent) !important;
     }
-    .fancyDataSmall {
-      width: 40%;
+    .fancyDataPie {
+      position: relative !important;
+      width: 40vh !important;
     }
-    .fancyDataLarge {
-      width: 80%;
+    .fancyDataBar {
+      position: relative !important;
+      width: 80vh !important;
     }
   </style>
 </head>
@@ -332,15 +334,15 @@ Main HTML
     <div id="data">
       <h2>Fancy Data</h2>
       <h3>Total Accuracy</h3>
-      <div class="fancyDataSmall"><canvas id="fancyDataCorrect"></canvas></div>
+      <div class="fancyDataPie"><canvas id="fancyDataCorrect"></canvas></div>
       <br />
       <br />
       <h3>Accuracy by age group</h3>
-      <div class="fancyDataLarge"><canvas id="fancyDataSortAge"></canvas></div>
+      <div class="fancyDataBar"><canvas id="fancyDataSortAge"></canvas></div>
       <br />
       <br />
       <h3>People per age group</h3>
-      <div class="fancyDataLarge"><canvas id="fancyDataTotal"></canvas></div>
+      <div class="fancyDataBar"><canvas id="fancyDataTotal"></canvas></div>
       <h2>Data</h2>
       <p id="dataTotal"></p>
       <p id="dataCorrect"></p>
@@ -784,6 +786,12 @@ Main HTML
         document.getElementById("fancyDataCorrect"),
         {
           type: "pie",
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1,
+            resizeDelay: 1000
+          }
           data: {
 
             labels: [
@@ -825,6 +833,12 @@ Main HTML
         document.getElementById("fancyDataSortAge"),
         {
           type: "bar",
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
+            resizeDelay: 1000
+          }
           data: {
 
             labels: [
@@ -875,6 +889,12 @@ Main HTML
         document.getElementById("fancyDataTotal"),
         {
           type: "bar",
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
+            resizeDelay: 1000
+          }
           data: {
 
             labels: [

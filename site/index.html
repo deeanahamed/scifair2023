@@ -329,6 +329,7 @@ Main HTML
     <div id="data">
       <h2>Fancy Data</h2>
       <div class="fancyData"><canvas id="fancyDataCorrect"></canvas></div>
+      <div class="fancyData"><canvas id="fancyDataSortAge"></canvas></div>
       <h2>Data</h2>
       <p id="dataTotal"></p>
       <p id="dataCorrect"></p>
@@ -802,6 +803,56 @@ Main HTML
                   "#FF9999"
                 ],
                 hoverOffset: 0
+              }
+            ]
+
+          }
+          
+        }
+      );
+      var fancyDataSortAge = new Chart(
+        document.getElementById("fancyDataSortAge"),
+        {
+          type: "bar",
+          data: {
+
+            labels: [
+              "Elementary",
+              "Middle",
+              "High",
+              "Adults",
+              "Seniors"
+            ],
+            datasets: [
+              {
+                label: "Correct",
+                data: [
+                  calcDataSortAge[0].correct,
+                  calcDataSortAge[1].correct,
+                  calcDataSortAge[2].correct,
+                  calcDataSortAge[3].correct,
+                  calcDataSortAge[4].correct
+                ],
+                backgroundColor: "#52CCA3",
+                hoverBackgroundColor: "#7ACCB1",
+                borderColor: "#52CCA3",
+                hoverBorderColor: "#7ACCB1",
+                borderWidth: 1
+              },
+              {
+                label: "Incorrect",
+                data: [
+                  calcDataSortAge[0].incorrect,
+                  calcDataSortAge[1].incorrect,
+                  calcDataSortAge[2].incorrect,
+                  calcDataSortAge[3].incorrect,
+                  calcDataSortAge[4].incorrect
+                ],
+                backgroundColor: "#FF6666",
+                hoverBackgroundColor: "#FF9999",
+                borderColor: "#FF6666",
+                hoverBorderColor: "#FF9999",
+                borderWidth: 1
               }
             ]
 

@@ -330,6 +330,10 @@ Main HTML
       </div>
     </div>
     <div id="data">
+      <h2>Raw data</h2>
+      <pre><code id="dataRaw"></code></pre>
+      <button onclick="cpDataRawCopy()">Copy to clipboard</button>
+      <a id="cpDataRawEmail" class="button" href="">Send via email</a>
       <h2>Fancy Data</h2>
       <h3>Accuracy per age group</h3>
       <div class="fancyDataBar"><canvas id="fancyDataSortAge"></canvas></div>
@@ -365,8 +369,6 @@ Main HTML
       <p id="data4Total"></p>
       <p id="data4Correct"></p>
       <p id="data4Incorrect"></p>
-      <h2>Raw data</h2>
-      <pre><code id="dataRaw"></code></pre>
     </div>
   </main>
   <footer>
@@ -670,10 +672,12 @@ Main HTML
   </script>
   <script>
     document.getElementById("data").style.display = "none";
-    document.getElementById("showData").style.display = "none";
+    //document.getElementById("showData").style.display = "none";
+
+    document.getElementById("showData").style.display = "block";
 
     function showShowData() {
-      document.getElementById("showData").style.display = "block";
+      //document.getElementById("showData").style.display = "block";
     }
 
     function showData() {
@@ -694,6 +698,7 @@ Main HTML
     var calcDataSortAge;
     function calcData() {
       document.getElementById("dataRaw").innerText = localStorage.getItem("data");
+      cpDataRawEmail(); /* set button link to email rawData */
 
       calcSavedData = JSON.parse(localStorage.getItem("data"));
 
@@ -773,6 +778,15 @@ Main HTML
       after data is calculated
       */
       fancyData();
+    }
+  </script>
+  <script>
+    function cpDataRawCopy() {
+      navigator.clipboard.writeText(localStorage.getItem("data"));
+    }
+    function cpDataRawEmail() {
+      document.getElementById("cpDataRawEmail").href = "mailto:ehanahame@marlboro.k12.nj.us?body="
+      //localStorage.getItem("data");
     }
   </script>
   <script>

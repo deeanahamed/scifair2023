@@ -333,7 +333,6 @@ Main HTML
       <h2>Raw data</h2>
       <pre><code id="dataRaw"></code></pre>
       <button onclick="cpDataRawCopy()">Copy to clipboard</button>
-      <a id="cpDataRawEmail" class="button" href="">Send via email</a>
       <h2>Fancy Data</h2>
       <h3>Accuracy per age group</h3>
       <div class="fancyDataBar"><canvas id="fancyDataSortAge"></canvas></div>
@@ -698,7 +697,6 @@ Main HTML
     var calcDataSortAge;
     function calcData() {
       document.getElementById("dataRaw").innerText = localStorage.getItem("data");
-      cpDataRawEmail(); /* set button link to email rawData */
 
       calcSavedData = JSON.parse(localStorage.getItem("data"));
 
@@ -783,10 +781,6 @@ Main HTML
   <script>
     function cpDataRawCopy() {
       navigator.clipboard.writeText(localStorage.getItem("data"));
-    }
-    function cpDataRawEmail() {
-      document.getElementById("cpDataRawEmail").href = "mailto:ehanahame@marlboro.k12.nj.us?body="
-      //localStorage.getItem("data");
     }
   </script>
   <script>

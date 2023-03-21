@@ -650,6 +650,33 @@ Main HTML
   </script>
 
   <!--
+  Cross-device data loading JavaScript
+  -->
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("data")) {
+      var newLoadedData = JSON.parse(urlParams.get("data"));
+      if (localStorage.getItem("data") && arrayHasData(JSON.parse(localStorage.getItem("data")), newLoadedData)) {
+        // do nothing, the saved data array has the url's data array
+      } else if (localStorage.getItem("data")) {
+        // combine the prevous data with the new url's data
+        var savedData = JSON.parse(localStorage.getItem("data"));
+        savedData.concat(newLoadedData);
+        localStorage.setItem("data", JSON.stringify(savedData));
+      } else {
+        // set the nonexistent data to the url's data
+        localStorage.setItem("data", JSON.stringify(newLoadedData));
+      }
+    }
+
+    function arrayHasData(array, data) {
+      return data.every(function (value) {
+        return array.has(value);
+      });
+    }
+  </script>
+
+  <!--
   Minified Chart.js
   (chartjs.org)
   -->

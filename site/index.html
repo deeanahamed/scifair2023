@@ -671,7 +671,7 @@ Main HTML
 
     function arrayHasData(array, data) {
       return data.every(function (value) {
-        return array.has(value);
+        return array.includes(value);
       });
     }
   </script>
@@ -807,7 +807,10 @@ Main HTML
   </script>
   <script>
     function cpDataRawCopy() {
-      navigator.clipboard.writeText(localStorage.getItem("data"));
+      navigator.clipboard.writeText(
+      "https://deeanahamed2023sciencefair.netlify.app/?data=\"" + JSON.stringify(localStorage.getItem("data")) + "\""
+      // JSON.stringify the already stringify-ed data to add url-compatible backslashes
+      );
     }
   </script>
   <script>

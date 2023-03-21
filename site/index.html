@@ -669,9 +669,9 @@ Main HTML
       }
     }
 
-    function arrayHasData(array, data) {
-      return data.every(function (value) {
-        return array.includes(value);
+    function arrayHasData(arr, values) {
+      return values.every(value => {
+        return arr.includes(value);
       });
     }
   </script>

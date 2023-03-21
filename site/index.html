@@ -655,7 +655,7 @@ Main HTML
   <script>
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("data")) {
-      var newLoadedData = JSON.parse(urlParams.get("data"));
+      var newLoadedData = JSON.parse(JSON.parse(urlParams.get("data")));
       if (localStorage.getItem("data") && arrayHasData(JSON.parse(localStorage.getItem("data")), newLoadedData)) {
         // do nothing, the saved data array has the url's data array
       } else if (localStorage.getItem("data")) {

@@ -669,9 +669,21 @@ Main HTML
       }
     }
 
-    function arrayHasData(arr, values) {
-      return values.every(value => {
-        return arr.includes(value);
+    function arrayHasData(array, data) {
+      // stringify each value inside array
+      // because ARRAY.includes does not work with objects
+      // D:
+      var newTempArray = [];
+      for (var i = 0; i < array.length; i++) {
+        newTempArray.push(JSON.stringify(array[i]))
+      }
+      var newTempData = [];
+      for (var i2 = 0; i2 < data.length; i2++) {
+        newTempData.push(JSON.stringify(data[i2]))
+      }
+      
+      return newTempData.every(value => {
+        return newTempArray.includes(value);
       });
     }
   </script>

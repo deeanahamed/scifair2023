@@ -661,8 +661,8 @@ Main HTML
       } else if (localStorage.getItem("data")) {
         // combine the prevous data with the new url's data
         var savedData = JSON.parse(localStorage.getItem("data"));
-        savedData.concat(newLoadedData);
-        localStorage.setItem("data", JSON.stringify(savedData));
+        var concatedData = savedData.concat(newLoadedData);
+        localStorage.setItem("data", JSON.stringify(concatedData));
       } else {
         // set the nonexistent data to the url's data
         localStorage.setItem("data", JSON.stringify(newLoadedData));
